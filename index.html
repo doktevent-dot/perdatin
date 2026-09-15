@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo Terbatas - IGES Symposium 2026</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        .hero-section { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
+        .promo-banner { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); }
+        .promo-img-preview {
+            max-height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    </style>
+	
+</head>
+<body class="bg-light text-dark">
+
+    <!-- Hero Section -->
+    <header class="hero-section text-white text-center py-5 shadow-sm">
+        <div class="container py-3">
+            <div class="d-inline-flex align-items-center text-warning text-uppercase px-4 py-2.5  fw-bold mb-4">
+            <!-- Logo Perdami (Otomatis muncul via Google Drive) -->
+            <img src="" id="committee-logo" class="rounded-circle me-2 d-none" alt="Logo Perdami" style="width: 64px; height: 64px; object-fit: contain;">
+            <!-- Nama Panitia dengan Ukuran Lebih Besar (fs-6 / fs-5) -->
+            <span id="event-committee" class="fs-3 tracking-wide">Memuat Panitia...</span>
+        </div>
+        <h1 class="display-4 fw-black" id="event-name">Memuat Event...</h1>
+            <!-- Headline Event -->
+            <p class="lead fw-semibold text-white mb-2" id="event-headline">-</p>
+            
+            <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+                <span class="badge bg-white bg-opacity-10 px-3 py-2 rounded fs-6 border border-white border-opacity-25" id="event-date"><i class="bi bi-calendar-event me-2"></i>-</span>
+                <span class="badge bg-danger px-3 py-2 rounded fs-6 fw-bold shadow-sm" id="event-deadline"><i class="bi bi-clock-history me-2"></i>Early Bird: -</span>
+				<span class="badge bg-danger px-3 py-2 rounded fs-6 fw-bold shadow-sm" id="invoice"></span>
+				<span class="badge bg-danger px-3 py-2 rounded fs-6 fw-bold shadow-sm" id="konfirmbayar"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+
+        <!-- KELOMPOK HEADLINE UTAMA: Flyer & Kata Pengantar -->
+        <section class="row g-4 mb-4">
+            <!-- Sisi Kiri: Flyer Headline Resmi (Mengambil data image1) -->
+            <div class="col-lg-5 d-none" id="flyer-container">
+                <div class="card shadow-sm border-light-subtle rounded-3 p-2 bg-white text-center h-100 d-flex align-items-center justify-content-center">
+                    <img src="" id="event-flyer" class="img-fluid rounded-2 flyer-headline shadow-sm" alt="Flyer Resmi Event">
+                </div>
+            </div>
+            
+            <!-- Sisi Kanan: Kata Pengantar & Detail Pelaksanaan -->
+            <div class="col-lg-12" id="info-text-container">
+                <!-- Kata Pengantar Event -->
+                <div class="card shadow-sm border-light-subtle rounded-3 p-4 mb-4 bg-white d-none" id="container-kata-pengantar">
+                    <h5 class="fw-bold text-dark mb-2"><i class="bi bi-chat-left-quote-fill me-2 text-primary"></i>Kata Pengantar</h5>
+                    <p class="text-secondary mb-0 fst-italic lh-lg" id="event-kata-pengantar" style="text-align: justify;">-</p>
+                </div>
+<div class="card shadow-sm border-light-subtle rounded-3 p-4 mb-4 bg-white">
+                <p class="fw-bold mb-3 text-dark text-uppercase tracking-wider small border-bottom pb-2">
+        <i class="bi bi-info-circle-fill text-primary me-2"></i>Event ini diselenggarakan pada:
+    </p>
+    <div class="row g-2 align-items-center" style="font-size: 1rem;">
+        <!-- Baris Tanggal -->
+        <div class="col-3 col-sm-2 fw-semibold text-secondary d-flex align-items-center">
+            <i class="bi bi-calendar3 text-primary me-2"></i> Tanggal
+        </div>
+        <div class="col-9 col-sm-10 fw-bold text-dark">: <span id="page-event-date">-</span></div>
+        
+        <!-- Baris Lokasi -->
+        <div class="col-3 col-sm-2 fw-semibold text-secondary d-flex align-items-center">
+            <i class="bi bi-geo-alt-fill text-danger me-2"></i> Lokasi
+        </div>
+        <div class="col-9 col-sm-10 fw-bold text-dark">: <span id="page-event-location">-</span></div>
+    </div></div>
+            </div>
+        </section>
+        
+
+        
+        <!-- Papan Promo Kupon Banner (Hanya muncul jika is_visible = 'yes') -->
+        <!-- Papan Diskon Bundling (Hanya muncul jika nilai_diskon > 0) -->
+        <section id="discount-section" class="promo-banner rounded-4 p-4 p-md-5 text-dark shadow mb-4 d-none" style="background: linear-gradient(135deg, #34d399 0%, #059669 100%); color: white !important;">
+            <div class="row align-items-center g-4">
+                <div class="col-12 text-white">
+                    <span class="badge bg-dark text-white text-uppercase px-2.5 py-1 mb-2">🎁 BUNDLING DISKON</span>
+                    <h2 class="fw-black mb-1" id="discount-title">-</h2>
+                    <p class="fs-5 mb-0 opacity-90" id="discount-desc">-</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Papan Kupon Promo (Hanya muncul jika lolos limit waktu, kuota, dan visible='yes') -->
+        <section id="promo-section" class="promo-banner rounded-4 p-4 p-md-5 text-dark shadow mb-5 d-none">
+            <div class="row align-items-center g-4">
+                <div class="col-12">
+                    <span class="badge bg-dark text-white text-uppercase px-2.5 py-1 mb-2">🔥 KUPON KODE PROMO</span>
+                    <h2 class="fw-black mb-1">Gunakan Kode: <span id="promo-code" class="text-primary text-decoration-underline">-</span></h2>
+                    <p class="fs-5 mb-0 opacity-90" id="promo-desc">-</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pilihan Kategori Klien -->
+        <section class="card shadow-sm rounded-3 p-4 mb-4 border-light-subtle">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-1 text-primary"><i class="bi bi-person-badge me-2"></i>Pilih Kategori Profesi Anda</h5>
+                    <p class="text-muted small mb-md-0">Harga komponen akan menyesuaikan kategori profesi.</p>
+                </div>
+                <div class="col-md-8">
+                    <select id="select-profesi" class="form-select form-select-lg border-primary border-opacity-50" onchange="switchProfesi()">
+                        <option value="umum">Umum</option>
+                        <option value="spesialis">Spesialis</option>
+                        <option value="perawat">Perawat</option>
+                        <option value="mahasiswa">Mahasiswa</option>
+                    </select>
+                </div>
+            </div>
+			<hr>
+			            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+                <div>
+                    <h3 class="fw-bold text-dark mb-1">Komponen Acara Tersedia</h3>
+                    <p class="text-muted mb-0">Pilih kombinasi simposium atau workshop pilihan Anda di bawah ini.</p>
+                </div>
+                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded mt-2 mt-md-0 fw-semibold">
+                    <i class="bi bi-arrow-repeat me-1"></i> Sisa Kuota Ter-update
+                </span>
+            </div>
+        </section>
+        <!-- Pilihan Komponen Acara -->
+        <section id="pilih-komponen" class="mb-5">
+
+            <div class="row g-4" id="components-grid">
+                <div class="col-12 text-center py-5">
+                    <div class="spinner-border text-primary" role="status"></div>
+                    <p class="mt-2 text-muted">Memuat komponen acara...</p>
+                </div>
+            </div>
+        </section>
+                <section id="daftar-harga" class="mb-5">
+            <div class="card shadow-sm border-light-subtle rounded-3 overflow-hidden">
+                <div class="card-header bg-dark text-white p-3">
+                    <h5 class="fw-bold mb-0 d-flex align-items-center">
+                        <i class="bi bi-table me-2"></i> Daftar Lengkap Biaya Investasi & Kontribusi Acara
+                    </h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped table-bordered mb-0 align-middle">
+                            <thead class="table-light text-uppercase font-monospace small">
+                                <tr>
+                                    <th style="min-width: 250px;">Komponen Acara</th>
+                                    <th>Target Profesi</th>
+                                    <th class="text-center bg-danger bg-opacity-10 text-danger fw-bold">Early Bird</th>
+                                    <th class="text-center bg-primary bg-opacity-10 text-primary fw-bold">Reguler</th>
+                                    <th class="text-center bg-success bg-opacity-10 text-success fw-bold">Onsite</th>
+                                </tr>
+                            </thead>
+                            <tbody id="price-matrix-tbody">
+                                <tr>
+                                    <td colspan="5" class="text-center py-4 text-muted">
+                                        <div class="spinner-border spinner-border-sm text-secondary me-2" role="status"></div>
+                                        Memuat matriks biaya kontribusi...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer bg-light text-muted small p-3">
+                    <i class="bi bi-exclamation-circle-fill me-1 text-warning"></i> 
+                    *Biaya di atas berlaku per komponen acara. Gunakan kupon promo jika tersedia untuk mendapatkan penawaran terbaik.
+                </div>
+            </div>
+        </section>
+        <!-- Sticky Bottom Total & Summary -->
+        <div class="position-sticky bottom-0 bg-white border-top shadow-lg p-3 mt-5 rounded-top-4" style="z-index: 1020;">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                <div>
+                    <span class="text-muted small d-block">Komponen Terpilih (<span id="selected-count" class="fw-bold text-dark">0</span>)</span>
+                    <span class="text-decoration-line-through text-muted small d-none" id="subtotal-display">Rp 0</span>
+                    <div class="fs-3 fw-black text-primary" id="total-display">Rp 0</div>
+                </div>
+                <div class="d-flex flex-column flex-md-row align-items-md-center gap-3 text-md-end">
+                    <div>
+                        <div id="discount-applied" class="badge bg-success-subtle text-success p-2 mb-1 d-none fs-6"></div>
+                        <div class="small text-muted" id="status-promo">Promo otomatis aktif jika kuota tersedia</div>
+                    </div>
+                    <a href="#" id="btn-daftar" class="btn btn-secondary btn-lg px-4 py-2.5 fw-bold shadow-sm disabled">
+                        Daftar Sekarang <i class="bi bi-arrow-right-short ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- Bootstrap 5 JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+let idx=6;
+</script>
+<script src="promo.js"></script>
+  
+</body>
+</html>
