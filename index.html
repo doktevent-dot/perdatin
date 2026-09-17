@@ -48,13 +48,13 @@
     </header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
     <div class="container">
-        <!-- Logo & Nama Instansi -->
-        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="promo.html">
-            <img id="committee-logo" src="" alt="Logo" width="30" height="30" class="d-none me-1">
-            <span id="event-committee" class="small">Panitia Acara</span>
+        
+        <!-- Judul Ringkas Halaman atau Brand Nav -->
+        <a class="navbar-brand fw-bold small text-warning" href="promo.html">
+            <i class="bi bi-calendar-check-fill me-1"></i> REGISTRASI PORTAL
         </a>
 
-        <!-- Grup Tombol Khusus Layar Mobile (Muncul di HP sebelum tombol burger) -->
+        <!-- GRUP TOMBOL ICON: Hanya muncul di HP (Menghilang di Desktop d-lg-none) -->
         <div class="d-flex d-lg-none gap-1 ms-auto me-2">
             <button type="button" class="btn btn-sm btn-outline-warning p-2" onclick="bukaModalInvoicePintasan()" title="Lihat Invoice">
                 <i class="bi bi-receipt-cutoff"></i>
@@ -64,16 +64,21 @@
             </button>
         </div>
 
-        <!-- Tombol Burger/Toggler Menu untuk Mobile -->
+        <!-- TOMBOL TOGGLER (BURGER MENU): Hanya muncul di HP -->
         <button class="navbar-toggler shadow-none p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAdmin" aria-controls="navbarNavAdmin" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menu Utama Navbar (Untuk Tampilan Desktop / Tablet Besar) -->
+        <!-- WADAH COLLAPSE: Semua isian di dalam ini otomatis sembunyi di HP dan melebar di desktop -->
         <div class="collapse navbar-collapse" id="navbarNavAdmin">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-2 mt-2 mt-lg-0">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-2 mt-3 mt-lg-0">
                 
-                <!-- Tombol Akumulasi Permanen Versi Desktop -->
+                <!-- Link Menu Halaman Depan -->
+                <li class="nav-item">
+                    <a class="nav-link active small fw-medium" href="promo.html">Halaman Depan</a>
+                </li>
+                
+                <!-- TOMBOL VERSI DESKTOP: Muncul HANYA di desktop (d-none d-lg-block) -->
                 <li class="nav-item d-none d-lg-block">
                     <button type="button" class="btn btn-sm btn-outline-warning fw-bold px-3 py-2 d-flex align-items-center gap-2" onclick="bukaModalInvoicePintasan()">
                         <i class="bi bi-receipt-cutoff"></i>
@@ -87,18 +92,23 @@
                     </button>
                 </li>
 
-                <!-- Link Menu Pengganti di Dalam Dropdown Hamburger Khusus Mobile -->
-                <li class="nav-item d-block d-lg-none border-top pt-2">
-                    <a class="nav-link text-warning small fw-bold" href="javascript:void(0)" onclick="bukaModalInvoicePintasan()"><i class="bi bi-receipt-cutoff me-2"></i>Lihat Invoice Saya</a>
+                <!-- LINK VERSI MOBILE: Hanya menyembur di dalam dropdown burger HP (d-block d-lg-none) -->
+                <li class="nav-item d-block d-lg-none border-top pt-2 mt-2">
+                    <a class="nav-link text-warning small fw-bold" href="javascript:void(0)" onclick="bukaModalInvoicePintasan()">
+                        <i class="bi bi-receipt-cutoff me-2"></i>Lihat Invoice Saya
+                    </a>
                 </li>
-                <li class="nav-item d-block d-lg-none">
-                    <a class="nav-link text-primary small fw-bold" href="javascript:void(0)" onclick="bukaModalKonfirmasiPintasan()"><i class="bi bi-wallet2 me-2"></i>Konfirmasi Pembayaran</a>
+                <li class="nav-item d-block d-lg-none mb-2">
+                    <a class="nav-link text-primary small fw-bold" href="javascript:void(0)" onclick="bukaModalKonfirmasiPintasan()">
+                        <i class="bi bi-wallet2 me-2"></i>Konfirmasi Pembayaran
+                    </a>
                 </li>
+                
             </ul>
         </div>
+
     </div>
-</nav>
-    <!-- Main Content -->
+</nav>    <!-- Main Content -->
     <main class="container py-5">
 
         <!-- KELOMPOK HEADLINE UTAMA: Flyer & Kata Pengantar -->
