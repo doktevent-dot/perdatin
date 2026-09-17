@@ -15,6 +15,11 @@
             object-fit: cover;
             width: 100%;
         }
+				#invoice:focus, #input-invoice:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    transition: all 0.2s ease-in-out;
+}
     </style>
 	
 </head>
@@ -200,7 +205,19 @@
             </div>
         </div>
     </main>
-
+<div class="position-fixed bottom-0 end-0 m-4 d-flex flex-column gap-2" style="z-index: 1050;">
+    <!-- Tombol Riwayat Invoice -->
+    <button type="button" class="btn btn-dark shadow-lg rounded-pill px-3 py-2.5 d-flex align-items-center gap-2 border border-light-subtle" onclick="bukaModalInvoicePintasan()">
+        <i class="bi bi-receipt-cutoff fs-5 text-warning"></i>
+        <span class="small fw-bold text-white d-none d-sm-inline">Lihat Invoice Saya</span>
+    </button>
+    
+    <!-- Tombol Konfirmasi Pembayaran Mandiri -->
+    <button type="button" class="btn btn-primary shadow-lg rounded-pill px-3 py-2.5 d-flex align-items-center gap-2" onclick="bukaModalKonfirmasiPintasan()">
+        <i class="bi bi-wallet2 fs-5"></i>
+        <span class="small fw-bold d-none d-sm-inline">Konfirmasi Bayar</span>
+    </button>
+</div>
 
 
     <!-- Bootstrap 5 JS -->
